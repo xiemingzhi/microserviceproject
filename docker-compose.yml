@@ -12,5 +12,10 @@ services:
   restful:
     build: ./restful
     ports:
+      - 8090:8080
+      
+  ui:
+    build: ./ui
+    ports:
       - 8080:8080
       
