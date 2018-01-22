@@ -5,6 +5,13 @@ Simple project 3 containers: db, restful api, ui endpoint gateway with angularjs
 # startup
 
 ```
+cd springwebapp
+mvn package -DskipTests
+cd angularjswebapp
+npm install; bower install; grunt build
+cd springangularjsproject
+cp -fr angularjswebapp/dist/* src/main/resources/static 
+mvn package -DskipTests
 docker-compose -f docker-compose.yml up
 ```
 
@@ -31,5 +38,16 @@ ls /usr/local/tomcat/webapps
 cd /usr/local/tomcat/logs
 cat catalina*.logs | more
 ```
-open browser: http://192.168.99.100:8080/springwebpp/contact/jsonlist
+open browser: http://192.168.99.100:8090/springwebpp/contact/jsonlist
+ 
+# ui 
 
+build angularjswebapp
+copy dist\* to springangularjsproject\src\main\resources\static
+docker-compose up 
+
+zuul edge service:
+open browser: http://192.168.99.100:8080/contact 
+
+frontend:
+open browser: http://192.168.99.100:8080/

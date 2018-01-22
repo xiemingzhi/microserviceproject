@@ -15,7 +15,10 @@ services:
       - 8090:8080
       
   ui:
-    build: ./ui
+    build: 
+      context: ./ui
+      args:
+        JAR_FILE: ./springangularjsproject/target/springangularjsproject-0.0.1-SNAPSHOT.jar
     ports:
-      - 8080:8080
+      - 8080:8080    
       
