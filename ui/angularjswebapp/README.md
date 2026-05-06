@@ -4,6 +4,11 @@ Generated using yeoman
 
 Install node.js, install npm, install yo, install bower, install grunt 
 
+Another way to build install docker, run node container 
+````
+docker run -it --rm -v /local/path/microserviceproject/ui/angularjswebapp:/home/node/angularjswebapp --entrypoint sh node:24-alpine
+````
+
 install npm modules 
 npm install
 
